@@ -6,5 +6,5 @@ Vue.prototype.$baseconfig = process.env.BaseConfig
 
 new Vue({
 	router,
-	reder:h=>h(App)
+	render:h=>h(App)
 }).$mount('#app')

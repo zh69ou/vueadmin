@@ -5,10 +5,10 @@
 export default {
   name: 'index',
   data() {
-    return {
-    }
+    return {}
   },
   mounted() {
+  	console.log(111)
   },
 }
 </script>
