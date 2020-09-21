@@ -12,3 +12,6 @@ export default {
   },
 }
 </script>
+<style scoped type="text/css" lang="scss">
+	@import "~/config/pub.scss";
+</style>
