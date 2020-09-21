@@ -121,7 +121,6 @@ export default {
   },
 
   beforeMount() {
-    console.log('img',this.images)
     preloadImages(this.images).then(() => (this.imagesPreloaded = true));
   },
 

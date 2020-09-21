@@ -1,15 +1,11 @@
 <template>
 <div class="container">
-	<view3d :images="imglist"></view3d>
+	<view3d :images="bgimg" style="height:300px;"></view3d>
 </div>
 </template>
 <script>
-	import view3d from '~/components/img360.vue'
-	[...Array(13)].map((_img,i)=>import('~/assets/img/'+(i+1)+'.png'))
-	// const loadimg = ()=> [...Array(13)].map((_img,i)=>require('../assets/img/'+(i+1)+'.png'))
-	const loadimg = ()=> {
-		return [...Array(13)].map((_img,i)=>`/static/img/${i+1}.png`)
-	}
+	import view3d from '~/components/view360.vue'
+	import('~/assets/img/test.jpg')
 export default {
   name: 'login',
   components:{
@@ -17,7 +13,8 @@ export default {
   },
   data() {
     return {
-    	imglist:loadimg()
+    	// bgimg:'/static/img/test.jpg'
+    	bgimg:'http://test.kodo.esports168.com/os360.jpg'
     }
   },
   mounted() {
