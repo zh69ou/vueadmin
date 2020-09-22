@@ -5,7 +5,6 @@
 </template>
 <script>
 	import view3d from '~/components/view360.vue'
-	import('~/assets/img/test.jpg')
 export default {
   name: 'login',
   components:{
