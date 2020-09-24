@@ -1,4 +1,12 @@
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 @import "bootstrap/scss/functions";
 @import "sets";
 @import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";

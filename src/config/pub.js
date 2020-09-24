@@ -1,3 +1,5 @@
+import qs from 'qs'
+import {Dialog,Toast} from 'vant'
 /**
  * 字符串是否在数组中
  * @Author zhou69.1@qq.com 2020-06-18
@@ -62,4 +64,50 @@ export const delData=(name)=>{
 	}catch(err){
 		return false
 	}
+}
+
+/**
+ * 弹出提示框
+ * @Author zhou69.1@qq.com 2020-06-18
+ * @param        msg        提示内容
+ * @param        title      标题
+ */
+export const alertMsg=(msg='',title='')=>{
+  let obj = {
+    message:msg?msg:'服务器忙稍后再试'
+  }
+  if(title){
+    obj.title = title
+  }
+  // return Dialog.alert(obj)
+  return new Promise((resolve,reject)=>{
+    let msgbox = Toast(obj.message)
+    let time = 2;
+    try{
+      let rt = setInterval(()=>{
+        time--
+        if(time<=0){
+          clearInterval(rt)
+          msgbox.clear()
+          resolve()
+        }
+      },1000)
+    }catch(e){
+      reject(e)
+    }
+  })
+}
+
+/**
+ * 确定框
+ * @Author zhou69.1@qq.com 2020-07-15
+ */
+export const confMsg=(msg,title='')=>{
+	let obj = {
+		message:msg
+	}
+	if(title){
+		obj.title = title
+	}
+	return Dialog.confirm(obj)
 }
